@@ -1,0 +1,2 @@
+# myconfig
+my csgo config
