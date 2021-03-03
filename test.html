@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>My Percious</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<link href="css/bootstrap" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="sha.js"></script>
+<script>
+function check()
+
+{
+var pwd=document.getElementById('pass').value;
+var sha=hex_sha1(pwd)
+if (pwd==""){
+document.getElementById('p1').innerHTML="Ooops,looks like you didn't type anything"
+}
+else{
+	if (sha=="fc7a734dba518f032608dfeb04f4eeb79f025aa7")
+	login()
+	else
+	document.getElementById('p1').innerHTML="Wrong password!"	
+	}
+}
+function login()
+{
+	
+	alert("succuss")
+　　window.location.href="readme.md";
+
+}
+function dokeydown() 
+    { 
+     var button = document.getElementById('ok');
+        if ( event.keyCode == 13) 
+        { 
+          button.click();
+        } 
+    } 
+
+</script>
+   </head>
+   <body background="pic1.png" background-repeat="no-repeat" background-attachment="fixed" onkeydown="dokeydown(event)">
+   <div align=center>
+   	<br><br><br><br><br><br><br><br><br><br><br><br>
+	   <h1 ><font face="Cabin Sketch"> please input password:</font></h1><br>
+	    <input type="password" class="form-control" id="pass" placeholder="Password" style="width:400px">
+	    <div id="p1" ></div>
+	    <br>
+	    <button type="button" class="btn btn-outline-secondary" style="width:150px"  id="ok" name="ok" onclick='check()'>confirm</button>
+	    <br><br>
+	    
+	      
+	  
+	  
+	
+	    
+	    
+	    
+	</div>
+	
+   </body>
+   
+</html>
