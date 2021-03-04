@@ -6,7 +6,7 @@ var sha=sha512(pwd)
 if (pwd==""){
 document.getElementById('p1').innerHTML="Ooops,looks like you didn't type anything"
 }
-if (pwd=="ftcsb"){
+else if (pwd=="ftcsb"){
 	document.getElementById('p1').innerHTML="确实，很难不赞同。。。"
 }
 else{
