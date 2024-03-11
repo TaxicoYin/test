@@ -1,0 +1,22 @@
+#!/bin/sh
+if [ ! -f /bin/zsh ]
+then 
+sudo pacman -S zsh --nocomfirm
+fi
+#sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
+wget https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+#wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+if [ ! -f /bin/git ]
+then  
+sudo pacman -S git --noconfirm
+fi
+git clone https://gitee.com/funckzs/zsh-autosuggestions.git
+git clone https://gitee.com/Annihilater/zsh-syntax-highlighting.git
+#git clone https://github.com/zsh-users/zsh-autosuggestions.git
+#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
+mv zsh-syntax-highlighting zsh-autosuggestions ~/.oh-my-zsh/plugins
+sed -i 's/plugins=(git)/plugins=(git sudo zsh-syntax-highlighting zsh-autosuggestions extract themes cp z safe-paste  per-directory-history history-substring-search)/g' ~/.zshrc
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="tjkirch"/g' ~/.zshrc
+source ~/.zshrc
+chsh -s /bin/zsh
+echo $SHELL
